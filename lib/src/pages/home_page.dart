@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:no_walls/src/pages/configuration.dart';
-import 'package:no_walls/src/pages/my_appointments.dart';
+import 'package:vibration/vibration.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -15,13 +15,12 @@ class HomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             RaisedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => MyAppointmentsPage()),
-                );
+              onPressed: () async {
+                if (await Vibration.hasVibrator()) {
+                  Vibration.vibrate(duration: 2000);
+                }
               },
-              child: Text('Mis citas'),
+              child: Text('Vibrar'),
               color: Colors.pinkAccent,
               focusColor: Colors.pink,
               textColor: Colors.white,
