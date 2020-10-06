@@ -7,30 +7,44 @@ class ListenPage extends StatefulWidget {
 }
 
 class _ListenPageState extends State<ListenPage> {
-double frequency;
-bool isRecording;
+  double frequency;
+  bool isRecording;
 
-FlutterFft flutterFft = new FlutterFft();
+  FlutterFft flutterFft = new FlutterFft();
 
-@override
+  @override
   void initState() {
     isRecording = flutterFft.getIsRecording;
     frequency = flutterFft.getFrequency;
     super.initState();
     _initialize();
-      }
-    
-      @override
-      Widget build(BuildContext context) {
-        return Scaffold(
-          appBar: AppBar(
-            title: Center(child: Text('Mis citas')),
-            backgroundColor: Colors.indigoAccent,
-          ),
-        );
-      }
-    
-      void _initialize() async {
-        
-      }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Center(child: Text('Mis citas')),
+        backgroundColor: Colors.indigoAccent,
+      ),
+      
+    );
+  }
+
+  void _initialize() async {
+    print("Starting recorder...");
+    await flutterFft.startRecorder();
+    print("Recorder started.");
+    setState(() => isRecording = flutterFft.getIsRecording);
+    flutterFft.onRecorderStateChanged.listen(
+      (data) => {
+        setState(
+          () => {
+            frequency = data[1],
+          },
+        ),
+        flutterFft.setFrequency = frequency,
+      },
+    );
+  }
 }
