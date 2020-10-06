@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:no_walls/src/pages/configuration.dart';
+import 'package:no_walls/src/pages/listen.dart';
 import 'package:vibration/vibration.dart';
+
 
 class HomePage extends StatelessWidget {
   @override
@@ -31,10 +32,10 @@ class HomePage extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => ConfigurationPage()),
+                  MaterialPageRoute(builder: (context) => ListenPage()),
                 );
               },
-              child: Text('Configuración'),
+              child: Text('Escuchar'),
               color: Colors.pinkAccent,
               textColor: Colors.white,
               shape: StadiumBorder(),
