@@ -27,7 +27,25 @@ class _ListenPageState extends State<ListenPage> {
         title: Center(child: Text('Mis citas')),
         backgroundColor: Colors.indigoAccent,
       ),
-      
+      body: Center(
+        child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              isRecording
+                  ? Text(
+                      "Current frequency: ${frequency.toStringAsFixed(2)}",
+                      style: TextStyle(
+                        fontSize: 20,
+                      ),
+                    )
+                  : Text(
+                      "Not recording",
+                      style: TextStyle(
+                        fontSize: 20,
+                      ),
+                    ),
+            ]),
+      ),
     );
   }
 
