@@ -74,7 +74,7 @@ class _ListenPageState extends State<ListenPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          "Escuchando, le avisaremos cuando cambie el turno",
+                          "Estamos escuchando, le avisaremos cuando cambie el turno.",
                           style: TextStyle(
                             fontSize: 18,
                           ),
