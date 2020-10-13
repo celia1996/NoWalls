@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_fft/flutter_fft.dart';
+import 'package:vibration/vibration.dart';
 
 class ListenPage extends StatefulWidget {
   @override
@@ -32,26 +33,27 @@ class _ListenPageState extends State<ListenPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               isRecording && frequency > 1500.00
-                  ? 
-                  Text(
-                      "Current frequency: ${frequency.toStringAsFixed(2)}",
-                      style: TextStyle(
-                        fontSize: 20,
-                      ),
+                  ? FutureBuilder(
+                      future: Vibration.vibrate(duration: 2000),
+                      builder: (context, AsyncSnapshot snapshot) {
+                        return Text(
+                          "Ha cambiado el turno, por favor verifica si es el tuyo",
+                          style: TextStyle(fontSize: 25),
+                        );
+                      },
                     )
                   : Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
                           "Escuchando, le avisaremos cuando cambie el turno",
                           style: TextStyle(
                             fontSize: 18,
                           ),
                         ),
-                    ],
-                  ),
-            ]
-            ),
+                      ],
+                    ),
+            ]),
       ),
     );
   }
