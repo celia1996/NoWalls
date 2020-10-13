@@ -31,20 +31,27 @@ class _ListenPageState extends State<ListenPage> {
         child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              isRecording
-                  ? Text(
+              isRecording && frequency > 1500.00
+                  ? 
+                  Text(
                       "Current frequency: ${frequency.toStringAsFixed(2)}",
                       style: TextStyle(
                         fontSize: 20,
                       ),
                     )
-                  : Text(
-                      "Not recording",
-                      style: TextStyle(
-                        fontSize: 20,
-                      ),
-                    ),
-            ]),
+                  : Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                          "Escuchando, le avisaremos cuando cambie el turno",
+                          style: TextStyle(
+                            fontSize: 18,
+                          ),
+                        ),
+                    ],
+                  ),
+            ]
+            ),
       ),
     );
   }
