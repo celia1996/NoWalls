@@ -16,19 +16,6 @@ class HomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             RaisedButton(
-              onPressed: () async {
-                if (await Vibration.hasVibrator()) {
-                  Vibration.vibrate(duration: 2000);
-                }
-              },
-              child: Text('Vibrar'),
-              color: Colors.pinkAccent,
-              focusColor: Colors.pink,
-              textColor: Colors.white,
-              shape: StadiumBorder(),
-            ),
-            SizedBox(width: 10),
-            RaisedButton(
               onPressed: () {
                 Navigator.push(
                   context,
