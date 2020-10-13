@@ -25,7 +25,7 @@ class _ListenPageState extends State<ListenPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(child: Text('Mis citas')),
+        title: Center(child: Text('Mi turno')),
         backgroundColor: Colors.indigoAccent,
       ),
       body: Center(
