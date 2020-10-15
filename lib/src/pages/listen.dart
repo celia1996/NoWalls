@@ -27,25 +27,11 @@ class _ListenPageState extends State<ListenPage> {
       appBar: AppBar(
         title: Text('Mi turno'),
         backgroundColor: Colors.indigoAccent,
-        actions: [
-          Container(
-            padding: EdgeInsets.all(8),
-            child: CircleAvatar(
-              backgroundImage: NetworkImage(
-                  'https://i0.wp.com/www.insights.la/wp-content/uploads/2015/12/escuchar-a-tu-cliente-1.png?ssl=1'),
-              radius: 20,
-            ),
-          )
-        ],
       ),
       body: Center(
         child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              FadeInImage(
-                placeholder: AssetImage('assets/listen-gif.gif') ,
-                image: NetworkImage('https://media1.giphy.com/media/eNM4NlGpmCxzcXesjr/giphy.gif')
-               ),
               isRecording && frequency > 1500.00
                   ? FutureBuilder(
                       future: Vibration.vibrate(duration: 2000),
@@ -62,17 +48,16 @@ class _ListenPageState extends State<ListenPage> {
                               FlutterLogo(size: 100)
                             ],
                           ),
-                          actions: <Widget>[
-                            FlatButton(
-                                child: Text('OK'),
-                                onPressed: () => Navigator.of(context).pop())
-                          ],
                         );
                       },
                     )
                   : Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
+                        FadeInImage(
+                            placeholder: AssetImage('assets/listen-gif.gif'),
+                            image: NetworkImage(
+                                'https://media1.giphy.com/media/eNM4NlGpmCxzcXesjr/giphy.gif')),
                         Text(
                           "Estamos escuchando, le avisaremos cuando cambie el turno.",
                           style: TextStyle(
