@@ -57,7 +57,8 @@ class _ListenPageState extends State<ListenPage> {
                         FadeInImage(
                             placeholder: AssetImage('assets/listen-gif.gif'),
                             image: NetworkImage(
-                                'https://media1.giphy.com/media/eNM4NlGpmCxzcXesjr/giphy.gif')),
+                                'https://media1.giphy.com/media/eNM4NlGpmCxzcXesjr/giphy.gif')
+                                ),
                         Text(
                           "Estamos escuchando, le avisaremos cuando cambie el turno.",
                           style: TextStyle(

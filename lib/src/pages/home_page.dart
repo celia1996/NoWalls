@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:no_walls/src/pages/listen.dart';
-import 'package:vibration/vibration.dart';
-
 
 class HomePage extends StatelessWidget {
   @override
