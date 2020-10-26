@@ -44,8 +44,11 @@ class _ListenPageState extends State<ListenPage> {
                             mainAxisSize: MainAxisSize.min,
                             children: <Widget>[
                               Text(
-                                  'Ha cambiado el turno, por favor verifica si es el tuyo.'),
-                              FlutterLogo(size: 100)
+                                  'Ha cambiado el turno, por favor verifique si es el suyo.'),
+                              ClipRRect(
+                                child: Image(
+                                    image: AssetImage('assets/turnero.png'),height: 150, width: 150),
+                              ),
                             ],
                           ),
                         );
@@ -54,11 +57,9 @@ class _ListenPageState extends State<ListenPage> {
                   : Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        FadeInImage(
-                            placeholder: AssetImage('assets/listen-gif.gif'),
-                            image: NetworkImage(
-                                'https://media1.giphy.com/media/eNM4NlGpmCxzcXesjr/giphy.gif')
-                                ),
+                        Image(
+                          image: AssetImage('assets/listen-gif.gif'),
+                        ),
                         Text(
                           "Estamos escuchando, le avisaremos cuando cambie el turno.",
                           style: TextStyle(

@@ -20,7 +20,7 @@ class HomePage extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => ListenPage()),
                 );
               },
-              child: Text('Aviso de turno'),
+              child: Text('Activar aviso de turno'),
               color: Colors.pinkAccent,
               textColor: Colors.white,
               shape: StadiumBorder(),
