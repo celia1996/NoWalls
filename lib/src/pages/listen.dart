@@ -43,7 +43,6 @@ class _ListenPageState extends State<ListenPage> {
                           content: Column(
                             mainAxisSize: MainAxisSize.min,
                             children: <Widget>[
-                              SizedBox(height: 30),
                               Text(
                                   'Ha cambiado el turno, por favor verifique si es el suyo.'),
                               ClipRRect(
