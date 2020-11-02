@@ -43,11 +43,14 @@ class _ListenPageState extends State<ListenPage> {
                           content: Column(
                             mainAxisSize: MainAxisSize.min,
                             children: <Widget>[
+                              SizedBox(height: 30),
                               Text(
                                   'Ha cambiado el turno, por favor verifique si es el suyo.'),
                               ClipRRect(
                                 child: Image(
-                                    image: AssetImage('assets/turnero.png'),height: 150, width: 150),
+                                    image: AssetImage('assets/turnero.png'),
+                                    height: 150,
+                                    width: 150),
                               ),
                             ],
                           ),
@@ -60,10 +63,15 @@ class _ListenPageState extends State<ListenPage> {
                         Image(
                           image: AssetImage('assets/listen-gif.gif'),
                         ),
-                        Text(
-                          "Estamos escuchando, le avisaremos cuando cambie el turno.",
-                          style: TextStyle(
-                            fontSize: 18,
+                        SizedBox(height: 30),
+                        SizedBox(
+                          height: 100.0,
+                          width: 300.0,
+                          child: Text(
+                            "Estamos escuchando, le avisaremos cuando cambie el turno.",
+                            style: TextStyle(
+                              fontSize: 18,
+                            ),
                           ),
                         ),
                       ],
