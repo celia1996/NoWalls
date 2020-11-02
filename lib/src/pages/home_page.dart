@@ -22,7 +22,7 @@ class HomePage extends StatelessWidget {
               },
               child: Text('Activar aviso de turno', style: TextStyle(fontWeight: FontWeight.w700),),
               style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all<Color>(Colors.pinkAccent),
+                backgroundColor: MaterialStateProperty.all<Color>(Colors.pink[300]),
                 padding:  MaterialStateProperty.all<EdgeInsets>(EdgeInsets.all(20.0)),
                 textStyle: MaterialStateProperty.all<TextStyle>(TextStyle(fontSize:20))
               ),
