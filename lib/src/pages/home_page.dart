@@ -13,17 +13,19 @@ class HomePage extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            RaisedButton(
+            ElevatedButton(
               onPressed: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => ListenPage()),
                 );
               },
-              child: Text('Activar aviso de turno'),
-              color: Colors.pinkAccent,
-              textColor: Colors.white,
-              shape: StadiumBorder(),
+              child: Text('Activar aviso de turno', style: TextStyle(fontWeight: FontWeight.w700),),
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all<Color>(Colors.pinkAccent),
+                padding:  MaterialStateProperty.all<EdgeInsets>(EdgeInsets.all(20.0)),
+                textStyle: MaterialStateProperty.all<TextStyle>(TextStyle(fontSize:20))
+              ),
             ),
           ],
         ),
