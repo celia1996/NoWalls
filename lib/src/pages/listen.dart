@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_fft/flutter_fft.dart';
+import 'package:no_walls/src/pages/home_page.dart';
 import 'package:vibration/vibration.dart';
 
 class ListenPage extends StatefulWidget {
@@ -25,7 +26,8 @@ class _ListenPageState extends State<ListenPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Mi turno'),
+        automaticallyImplyLeading: false,
+        title: Center(child: Text('Mi turno')),
         backgroundColor: Colors.indigoAccent,
       ),
       body: Center(
@@ -73,6 +75,20 @@ class _ListenPageState extends State<ListenPage> {
                             ),
                           ),
                         ),
+                        FlatButton(
+                          onPressed: () {
+                            setState(() {
+                              flutterFft.stopRecorder();
+                            });
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => HomePage()),
+                            );
+                          },
+                          child: Text('Desactivar aviso'),
+                          color: Colors.indigo[200],
+                        )
                       ],
                     ),
             ]),
