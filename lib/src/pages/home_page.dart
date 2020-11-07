@@ -6,8 +6,9 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(child: Text('WallsOut')),
+        title: Center(child: Text('WarnMe')),
         backgroundColor: Colors.indigoAccent,
+        automaticallyImplyLeading: false,
       ),
       body: Center(
         child: Row(
@@ -23,8 +24,8 @@ class HomePage extends StatelessWidget {
               child: Text('Activar aviso de turno', style: TextStyle(fontWeight: FontWeight.w700),),
               style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all<Color>(Colors.pink[300]),
-                padding:  MaterialStateProperty.all<EdgeInsets>(EdgeInsets.all(20.0)),
-                textStyle: MaterialStateProperty.all<TextStyle>(TextStyle(fontSize:20))
+                padding:  MaterialStateProperty.all<EdgeInsets>(EdgeInsets.all(15.0)),
+                textStyle: MaterialStateProperty.all<TextStyle>(TextStyle(fontSize:16)),      
               ),
             ),
           ],
