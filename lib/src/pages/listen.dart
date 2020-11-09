@@ -99,6 +99,7 @@ class _ListenPageState extends State<ListenPage> {
   void _initialize() async {
     print("Starting recorder...");
     await flutterFft.startRecorder();
+    flutterFft.setSampleRate = 0;
     print("Recorder started.");
     setState(() => isRecording = flutterFft.getIsRecording);
     flutterFft.onRecorderStateChanged.listen(
