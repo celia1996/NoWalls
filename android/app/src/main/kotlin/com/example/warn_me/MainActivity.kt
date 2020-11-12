@@ -1,4 +1,4 @@
-package com.example.no_walls
+package com.example.warn_me
 
 import io.flutter.embedding.android.FlutterActivity
 
