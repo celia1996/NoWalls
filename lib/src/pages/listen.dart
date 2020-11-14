@@ -9,15 +9,15 @@ class ListenPage extends StatefulWidget {
 }
 
 class _ListenPageState extends State<ListenPage> {
-  double frequency;
-  bool isRecording;
+  double _frequency;
+  bool _isRecording;
 
   FlutterFft flutterFft = new FlutterFft();
 
   @override
   void initState() {
-    isRecording = flutterFft.getIsRecording;
-    frequency = flutterFft.getFrequency;
+    _isRecording = flutterFft.getIsRecording;
+    _frequency = flutterFft.getFrequency;
     super.initState();
     _initialize();
   }
@@ -34,7 +34,7 @@ class _ListenPageState extends State<ListenPage> {
         child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              isRecording && frequency > 1200.00
+              _isRecording && _frequency > 1200.00
                   ? FutureBuilder(
                       future: Vibration.vibrate(duration: 2000),
                       builder: (context, AsyncSnapshot snapshot) {
@@ -99,15 +99,15 @@ class _ListenPageState extends State<ListenPage> {
   void _initialize() async {
     await flutterFft.startRecorder();
     flutterFft.setSampleRate = 0;
-    setState(() => isRecording = flutterFft.getIsRecording);
+    setState(() => _isRecording = flutterFft.getIsRecording);
     flutterFft.onRecorderStateChanged.listen(
       (data) => {
         setState(
           () => {
-            frequency = data[1],
+            _frequency = data[1],
           },
         ),
-        flutterFft.setFrequency = frequency,
+        flutterFft.setFrequency = _frequency,
       },
     );
   }
