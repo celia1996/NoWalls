@@ -101,10 +101,10 @@ class _ListenPageState extends State<ListenPage> {
     flutterFft.setSampleRate = 0;
     setState(() => _isRecording = flutterFft.getIsRecording);
     flutterFft.onRecorderStateChanged.listen(
-      (data) => {
+      (sounds) => {
         setState(
           () => {
-            _frequency = data[1],
+            _frequency = sounds[1],
           },
         ),
         flutterFft.setFrequency = _frequency,
