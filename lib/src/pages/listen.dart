@@ -34,7 +34,7 @@ class _ListenPageState extends State<ListenPage> {
         child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              _isRecording && _frequency > 1200.00
+              _isRecording && _frequency >= 1200.00
                   ? FutureBuilder(
                       future: Vibration.vibrate(duration: 2000),
                       builder: (context, AsyncSnapshot snapshot) {
